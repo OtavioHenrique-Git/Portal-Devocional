@@ -1,50 +1,43 @@
 <!DOCTYPE html>
-<html lang="pt-Br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal Devocional</title>
-    <link rel="stylesheet" href="style.css"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portal Devocional</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <h1>Portal Devocional</h1>
-        <button id="toggle-theme">🌙</button>
-    </header>
+  <header>
+    <h1>Portal Devocional</h1>
+    <button id="toggle-theme" title="Trocar tema">🌙</button>
+  </header>
 
-    <main>
-        <section id="versiculo">
-          <h2>versiculo do Dia</h2>
-          <p id="versiculo-texto">Carregando...</p>
-        </section>
+  <main>
+    <section id="versiculo">
+      <h2>Versículo do Dia</h2>
+      <p id="versiculo-texto">Carregando...</p>
+    </section>
 
-        <section id="anotacoes">
-            <h2>Minhas Anotações</h2>
-            <textarea id="anotacao" placeholder="O que Deus falou com você hoje ? "></textarea>
-            <button onclick="salvarAnotacao()">Salvar Anotaçõe</button>
-        </section>
+    <section id="anotacoes">
+      <h2>Minhas Anotações</h2>
+      <textarea id="anotacao" placeholder="O que Deus falou com você hoje?"></textarea>
+      <button onclick="salvarAnotacao()">Salvar Anotação</button>
+    </section>
 
-        <section id="pedido-oracao">
-    <h2>Pedido de Oração</h2>
-        <form id="form-oracao">
-      
-<form action="https://formsubmit.co/hotavio.silva11@gmail.com" method="POST">
-  <input type="text" name="name" placeholder="Seu nome" required>
-  <input type="text" name="whatsapp" placeholder="Seu WhatsApp (opcional)">
-  <textarea name="message" placeholder="Escreva seu pedido de Oração" required></textarea>
+    <section id="pedido-oracao">
+      <h2>Pedido de Oração</h2>
+      <form id="form-oracao" onsubmit="enviarParaWhatsApp(event)">
+        <input type="text" id="nome" placeholder="Seu nome" required />
+        <input type="text" id="whatsapp" placeholder="Seu WhatsApp (opcional)" />
+        <textarea id="mensagem" placeholder="Escreva seu pedido de oração" required></textarea>
+        <button type="submit">Enviar Pedido de Oração</button>
+      </form>
+      <p id="confirmacao"></p>
+    </section>
+  </main>
 
-  <!-- Proteção contra spam -->
-  <input type="hidden" name="_captcha" value="false">
-  <!-- Redirecionar para página de confirmação -->
-  <input type="hidden" name="_next" value="https://seudominio.com/obrigado.html">
+  <footer>Leia a Bíblia e fortaleça sua fé 🙏</footer>
 
-  <button type="submit">Enviar Pedido</button>
-         </form>
-         <p id="confirmacao"></p>
-
-        </section>
-    </main>
-    <script src="script.js"></script>
-    <footer>Leia a Biblia </footer>
+  <script src="script.js"></script>
 </body>
 </html>

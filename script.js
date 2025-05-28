@@ -19,10 +19,26 @@ const versiculos = [
   "E a paz de Deus, que excede todo o entendimento, guardará o vosso coração e a vossa mente, em Cristo Jesus. - Filipenses 4:7",
   "Não temas, porque eu estou contigo; não te assombres, porque eu sou o teu Deus; eu te fortaleço, e te ajudo, e te sustento com a destra da minha justiça. - Isaías 41:10",
   "O amor é paciente, o amor é bondoso. O amor não é invejoso, nem orgulhoso, nem vaidoso, nem rude, nem egoísta, nem se irrita, nem guarda rancor. - 1 Coríntios 13:4",
-  "Este é o dia que o Senhor fez; nele nos alegraremos e exultaremos. - Salmos 118:24"
+  "Este é o dia que o Senhor fez; nele nos alegraremos e exultaremos. - Salmos 118:24",
+  "Confia no Senhor de todo o teu coração e não te estribes no teu próprio entendimento. — Provérbios 3:5",
+  "Buscai primeiro o Reino de Deus, e a sua justiça, e todas essas coisas vos serão acrescentadas. — Mateus 6:33",
+  "O Senhor é a minha luz e a minha salvação; a quem temerei? — Salmos 27:1",
+  "Bendito seja o Senhor, que diariamente leva a nossa carga, o Deus que é a nossa salvação. — Salmos 68:19",
+  "O Senhor está perto de todos os que o invocam, de todos os que o invocam em verdade. — Salmos 145:18",
+  "Alegrai-vos sempre no Senhor; outra vez digo: alegrai-vos. — Filipenses 4:4",
+  "Lançando sobre ele toda a vossa ansiedade, porque ele tem cuidado de vós. — 1 Pedro 5:7",
+  "Sede fortes e corajosos; não temais, nem vos assusteis diante deles; porque o Senhor vosso Deus é quem vai convosco. — Deuteronômio 31:6",
+  "O Senhor é bom, uma fortaleza no dia da angústia; e conhece os que nele confiam. — Naum 1:7",
+  "Eu sou o caminho, e a verdade, e a vida; ninguém vem ao Pai, senão por mim. — João 14:6",
+  "Se Deus é por nós, quem será contra nós? — Romanos 8:31",
+  "A tua palavra é lâmpada para os meus pés e luz para o meu caminho. — Salmos 119:105",
+  "Clama a mim, e responder-te-ei, e anunciar-te-ei coisas grandes e ocultas, que não sabes. — Jeremias 33:3",
+  "O Senhor é misericordioso e compassivo, tardio em irar-se e grande em benignidade. — Salmos 103:8",
+  "Ele dá força ao cansado, e aumenta as forças ao que não tem nenhum vigor. — Isaías 40:29",
+  "Pois eu bem sei os planos que estou projetando para vós, diz o Senhor; planos de paz e não de mal, para vos dar um futuro e uma esperança. — Jeremias 29:11"
 ];
 
-// Selecionar versículo aleatório do dia
+// Mostrar versículo aleatório
 function mostrarVersiculo() {
   const texto = document.getElementById('versiculo-texto');
   const aleatorio = Math.floor(Math.random() * versiculos.length);
@@ -36,7 +52,7 @@ function salvarAnotacao() {
   alert('Anotação salva com sucesso!');
 }
 
-// Carregar anotação salva (caso exista)
+// Carregar anotação salva
 function carregarAnotacao() {
   const anotacao = localStorage.getItem('devocional_anotacao');
   if (anotacao) {
@@ -44,23 +60,23 @@ function carregarAnotacao() {
   }
 }
 
-// Simular envio de pedido de oração
-function enviarPedido() {
-  const pedido = document.getElementById('pedido').value;
-  const confirmacao = document.getElementById('confirmacao');
+// Função para abrir o WhatsApp com o pedido de oração
+function enviarParaWhatsApp(event) {
+  event.preventDefault();
   
-  if (pedido.trim() === '') {
-    confirmacao.textContent = "Por favor, escreva seu pedido.";
-    confirmacao.style.color = "red";
-    return;
-  }
-
-  confirmacao.textContent = "Pedido enviado com fé! 🙏";
-  confirmacao.style.color = "#388e3c";
-  document.getElementById('pedido').value = '';
+  const nome = document.getElementById("nome").value;
+  const numero = document.getElementById("whatsapp").value;
+  const mensagem = document.getElementById("mensagem").value;
+  
+  const texto = `🙏 Pedido de Oração 🙏%0A%0A📌 Nome: ${nome}%0A📞 WhatsApp: ${numero || 'Não informado'}%0A📝 Pedido: ${mensagem}`;
+  
+  const numeroDestino = "5547997711907"; // seu número sem espaços e sem "+"
+  const url = `https://wa.me/${numeroDestino}?text=${texto}`;
+  
+  window.open(url, "_blank");
 }
 
-// Executar ao carregar a página
+// Executar funções ao carregar a página
 document.addEventListener('DOMContentLoaded', () => {
   mostrarVersiculo();
   carregarAnotacao();
