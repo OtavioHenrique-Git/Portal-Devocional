@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Devocional</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <header>
+        <h1>Portal Devocional</h1>
+        <button id="toggle-theme">🌙</button>
+    </header>
+
+    <main>
+        <section id="versiculo">
+          <h2>versiculo do Dia</h2>
+          <p id="versiculo-texto">Carregando...</p>
+        </section>
+
+        <section id="anotacoes">
+            <h2>Minhas Anotações</h2>
+            <textarea id="anotacao" placeholder="O que Deus falou com você hoje ? "></textarea>
+            <button onclick="salvarAnotacao()">Salvar Anotaçõe</button>
+        </section>
+
+        <section id="pedido-oracao">
+    <h2>Pedido de Oração</h2>
+        <form id="form-oracao">
+        <label for="nome">Seu nome:</label>
+        <input type="text" id="nome" name="nome" required    placeholder="Digite seu nome">
+
+        <label for="whatsapp">Seu WhatsApp (opcional):</label>
+        <input type="text" id="whatsapp" name="whatsapp" placeholder="(99) 99999-9999">
+
+        <label for="mensagem">Pedido de oração:</label>
+        <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+
+<form action="https://formsubmit.co/hotavio.silva11@gmail.com" method="POST">
+  <input type="text" name="name" placeholder="Seu nome" required>
+  <input type="text" name="whatsapp" placeholder="Seu WhatsApp (opcional)">
+  <textarea name="message" placeholder="Escreva seu pedido" required></textarea>
+
+  <!-- Proteção contra spam -->
+  <input type="hidden" name="_captcha" value="false">
+  <!-- Redirecionar para página de confirmação -->
+  <input type="hidden" name="_next" value="https://seudominio.com/obrigado.html">
+
+  <button type="submit">Enviar Pedido</button>
+         </form>
+         <p id="confirmacao"></p>
+
+        </section>
+    </main>
+    <script src="script.js"></script>
+    <footer>Leia a Biblia </footer>
+</body>
+</html>

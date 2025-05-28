@@ -1,0 +1,180 @@
+/* Aqui reseta a pagina pq ela ja vem com algumas coisas escritas*/
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    padding: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+h1 {
+    font-size: 28px;
+    color: #2e7d32;
+}
+
+#toggle-theme{
+    padding: 8px 12px;
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#pedido-oracao form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#pedido-oracao label {
+font-weight: bold;
+  color: #333;
+}
+#pedido-oracao input[type="text"],
+#pedido-oracao textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+#pedido-oracao textarea {
+  resize: vertical;
+}
+
+#pedido-oracao button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#pedido-oracao button:hover {
+  background-color: #45a049;
+}
+
+
+main section {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05)
+}
+
+section {
+    color: #2e7d32;
+    margin-bottom: 10px;
+}
+
+#anotacao, #pedido {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    resize: vertical;
+    min-height: 80px;
+}
+
+button {
+    background-color: #2e7d32;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #1b5e20;
+}
+/* Confirmação de Envio*/
+#confirmacao {
+    margin-top: 10px;
+    color: #388e3c;
+    font-weight: bold;
+}
+/* Modo Escuro*/
+body.dark-mode {
+   background-color: #121212;
+   color: #e0e0e0; 
+}
+
+body.dark-modo main section {
+    background-color: #1e1e1e;
+    border-color: #333;
+}
+
+body.dark-mode #toggle-theme {
+    background-color: #81c784;
+    color: black;
+}
+
+footer {
+   color: #121212;
+   font-family: 'Courier New', Courier, monospace;
+   text-align: center;
+}
+/* Layout responsivo para celular*/
+
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  h1 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  #toggle-theme {
+    width: 100%;
+  }
+
+  main section {
+    padding: 15px;
+  }
+
+  textarea, button {
+    font-size: 16px;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+  }
+
+  footer {
+    color: #121212;
+   font-family: 'Courier New', Courier, monospace;
+   text-align: center;
+  }
+}
